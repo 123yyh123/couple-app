@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/couple?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    username: root
+    password: '@yangyahao'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: yahaoyang929@vip.qq.com
+    password: 'dspuhborkdhvbbjh'
+    default-encoding: UTF-8
+    properties: # 设置邮件超时时间防止服务器阻塞
+      timeout: 5000
+      connection-timeout: 5000
+      write-timeout: 5000
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+        debug: true
+  redis:
+    host: localhost
+    port: 6379
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
