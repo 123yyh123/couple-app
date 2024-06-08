@@ -6,6 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RegisterUserVO extends User {
+public class UserVO extends User {
     private String code;
+    private String token;
 }

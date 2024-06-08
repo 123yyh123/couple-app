@@ -1,7 +1,7 @@
 package cn.yahaoyang.service;
 
 import cn.yahaoyang.domain.User;
-import cn.yahaoyang.vo.RegisterUserVO;
+import cn.yahaoyang.vo.UserVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date 2024/6/7
  */
 public interface UserService extends IService<User> {
-    User login(User user);
+    UserVO login(User user);
 
-    User register(RegisterUserVO user);
+    User register(UserVO user);
 }

@@ -6,15 +6,9 @@ import cn.yahaoyang.exception.BusinessException;
 import cn.yahaoyang.service.UserService;
 import cn.yahaoyang.utils.ParameterVerificationUtil;
 import cn.yahaoyang.utils.ResultUtil;
-import cn.yahaoyang.vo.RegisterUserVO;
-import lombok.Getter;
+import cn.yahaoyang.vo.UserVO;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
-import java.util.Objects;
 
 /**
  * @author yyh
@@ -27,13 +21,13 @@ public class UserController {
     public final UserService userService;
 
     @PostMapping("/login")
-    public Result<User> login(@RequestBody User user){
+    public Result<UserVO> login(@RequestBody User user){
         verify(user);
         return ResultUtil.success(userService.login(user));
     }
 
     @PostMapping("/register")
-    public Result<User> register(@RequestBody RegisterUserVO user){
+    public Result<User> register(@RequestBody UserVO user){
         verify(user);
         if (!ParameterVerificationUtil.isHasText(user.getCode())){
             throw new BusinessException("验证码不能为空");
